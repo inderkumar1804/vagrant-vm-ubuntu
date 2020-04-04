@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  NodeCount = 1
+
+  (1..NodeCount).each do |i|
+    config.vm.define "windowsvm0#{i}" do |node|
+      node.vm.box = "microsoft/windows7"
+      node.vm.hostname = "windowsvm0#{i}.example.com"
+      node.vm.network "private_network", ip: "172.43.43.10#{i}"
+      node.vm.provider "virtualbox" do |v|
+        v.name = "windowsvm0#{i}"
+        v.memory = 1400
+        v.cpus = 1
+      end
+    end
+  end
+
+end
