@@ -3,6 +3,7 @@
 
 
 #This is for windows7
+#Its working fine.
 
 ENV['VAGRANT_NO_PARALLEL'] = 'yes'
 
