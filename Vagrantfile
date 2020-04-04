@@ -3,6 +3,7 @@
 
 
 #Its for Ubuntu.
+#Fully unix based code.
 
 ENV['VAGRANT_NO_PARALLEL'] = 'yes'
 
